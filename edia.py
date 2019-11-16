@@ -88,7 +88,8 @@ def get_ms_clusters(image, channels=3, quantile=0.1, number_of_samples=100):
 #from regions get get colored regions
 #im = get_regions(img)
 
-def color_clusters_image(clusters,img):
+def color_clusters_image(clusters,image):
+    img = np.array(image)
     groups = np.unique(clusters)
     arr = np.zeros(img.shape, dtype=int)
 
@@ -104,7 +105,8 @@ def color_clusters_image(clusters,img):
     return(arr)
     
 #just get all the regions colors
-def get_cluster_colors(clusters,img):
+def get_cluster_colors(clusters,image):
+    img = np.array(image)
     groups = np.unique(clusters)
     colors = np.zeros((len(groups),3))
 
